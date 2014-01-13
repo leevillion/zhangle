@@ -1,7 +1,7 @@
 
 html,body{
 	background-color: #E6E6E6;
-	background-image: url(images/bg.png);
+	background-image: url(../images/bg.png);
 	background-position: center 20px;
 	font-family: Verdana, Geneva, sans-serif;
 	margin:0;
@@ -136,7 +136,7 @@ header{
 }
 
 .main-nav a span{
-	background-image: url(images/navigation.png);
+	background-image: url(../images/navigation.png);
 	background-repeat: no-repeat;
 	width: 60px;
 	height: 60px;
@@ -240,7 +240,7 @@ header{
 
 }
 .project1 label:hover,.project2 label:hover,.project3 label:hover,.project4 label:hover,.project5 label:hover,.project6 label:hover{
-	background-image: url(images/projectbgt.png);
+	background-image: url(../images/projectbgt.png);
 	background-position: 0px 600px;
 }
 /*工作内容*/
