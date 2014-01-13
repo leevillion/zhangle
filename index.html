@@ -1,79 +1,161 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Zhangle : Individual Resume" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Zhangle</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/leevillion/zhangle">View on GitHub</a>
-
-          <h1 id="project_title">Zhangle</h1>
-          <h2 id="project_tagline">Individual Resume</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/leevillion/zhangle/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/leevillion/zhangle/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+<head>
+  <title>醉梨</title>
+  <meta http-equiv="Content-type" content="text/html" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="stylesheets/resume.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/main.js"></script>
+  <script type="text/javascript" src="javascripts/animation.js"></script>
+  <script type="text/javascript">
+    window.onload=function()//window的onload事件，窗体加载完毕的时候执行
+    {
+      drawRing("canvas.ring",96);
+      drawBigRing("canvas.w-1-c-r",400)
+      drawBar("canvas.a-c-l-b","VBS","Html","Js","C","PHP","Python","#666699","#00c09e")
+      drawBar("canvas.a-c-t-b","QTP","Mysql","Jira","SVN","QC","Oracle","#6666CC","#FFCC33")
+    };
+</script>
+</head>
+<body>
+  <!-- 欢迎栏-->
+  <div class="welcome"><span>So you have come here</span></div>
+  <!-- 卷首语 -->
+<span class="line"></span>
+<div class="introduction">
+  <p>
+    something
+    <br><span>@somethingsome</span>
+  </p>
+  <h2>
+    我喜爱惊险，刺激的测试运动，您可以<a href="#work" onclick="scroller('work', 500)">看看我近期的工作</a><br>您还可以访问<a href="http://zlshuo.com" target="view_window">我的博客</a></h2>
+</div>
+  <!-- 导航栏 -->
+<header id="header">  
+  <div class="head">
+    <nav class="main-nav">
+      <a class="main-nav-work" href="#work" title="work" onclick="scroller('work', 500)"><span></span>我的工作</a>
+      <a class="main-nav-about" href="#about" title="about"  onclick="scroller('about', 500)"><span></span>我的信息</a>
+      <a class="main-nav-contact" href="#contact" title="contact"  onclick="scroller('contact', 500)"><span></span>与我联系</a>
+    </nav>
+  </div>
+</header>
+<div class="section-break"></div>
+<!-- 工作模块 -->
+<div class="contentpart">   
+  <div class="workpart-title"><canvas id="work" class="ring" width="96px" height="96px">work</canvas></div>
+  <div class="work1">
+    <div class="project1">
+      <input id="w-1" name="work-input" type="radio">
+      <label for="w-1">
+        <span><p>工作内容</p></span>
+      </label>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+    <div class="w-1-c">
+        <canvas class="w-1-c-r" width="400px" height="400px">忙碌的我</canvas> 
+        <div class="w-1-c-r-e">
+          <div class="w-1-c-r-e-e"><span class="black"></span>自动化</div><br>
+          <div class="w-1-c-r-e-e"><span class="red"></span>需求评审</div><br>
+          <div class="w-1-c-r-e-e"><span class="green"></span>测试报告</div><br>
+          <div class="w-1-c-r-e-e"><span class="blue"></span>测试需求</div><br>
+          <div class="w-1-c-r-e-e"><span class="yellow"></span>测试用例</div><br>
+        </div>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Zhangle maintained by <a href="https://github.com/leevillion">leevillion</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+    <div class="project2">
+      <input id="w-2" name="work-input" type="radio">
+      <label for="w-2">
+        <span><p>上海爱递吉物流运输平台</p></span>
+      </label>
     </div>
-
-    
-
-  </body>
+    <div class="w-2-c">
+      <img src="images/adage.png" alt="adage">
+        <span class="w-2-c-e">上海爱递吉物流平台，整合物流信息和需求，物流资源优化配置，提高物流操作和管理水平，降低物流成本。主要包括运单管理、订单管理、运输线路优化、市场交易等模块。</span>
+        <span class="w-2-c-e-1">作为测试工程师，我的任务是保证平台的正常运行，创造完善、流畅的用户体验，解决突发问题并提出改进意见。</span>
+    </div>
+    <div class="project3">
+      <input id="w-3" name="work-input" type="radio">
+      <label for="w-3">
+        <span><p>阿里巴巴财资管理系统</p></span>
+      </label>
+    </div>
+    <div class="w-3-c">
+      <img src="images/alibaba.png" alt="adage">
+        <span class="w-3-c-e">解决跨BU实时数据统计效率低下，图表统计耗费大量人力，审批流程未线上运行的问题，提高财务风险管控和BU间融资利率等信息的透明度以满足审计追溯等要求。财资管理系统主要分为现金管理、银行账户管理和投资管理三大模块。</span>
+        <span class="w-3-c-e-1">1.设计测试用例520条<br>2.编写自动化脚本(qtp)<br>3.执行测试用例，提交BUG总数约400个<br>4.打包发布</span>
+    </div>
+    <div class="project4">
+      <input id="w-4" name="work-input" type="radio">
+      <label for="w-4">
+        <span><p>交通银行二代支付系统</p></span>
+      </label>
+    </div>
+    <div class="w-4-c">
+      <img src="images/bank.png" alt="adage">
+        <span class="w-4-c-e">CNAPS2提供了多点清算功能，新增大额清算排队业务撮合、资金池管理和日终自动拆解等功能，并采用ISO20022作为部分报文标准，独立出批量代收付、实时代收付、支票圈存签约协议管理等报文。</span>
+        <span class="w-4-c-e-1">1.UAT方面的测试，业务知识要求较多<br>2.编写操作手册<br>3.发送往来帐</span>
+    </div>
+    <div class="project5">
+      <input id="w-5" name="work-input" type="radio">
+      <label for="w-5">
+        <span><p>交通银行二代支付系统</p></span>
+      </label>
+    </div>
+    <div class="w-5-c">
+      <img src="images/bank.png" alt="adage">
+        <span class="w-5-c-e">CNAPS2提供了多点清算功能，新增大额清算排队业务撮合、资金池管理和日终自动拆解等功能，并采用ISO20022作为部分报文标准，独立出批量代收付、实时代收付、支票圈存签约协议管理等报文。</span>
+        <span class="w-5-c-e-1">1.UAT方面的测试，业务知识要求较多<br>2.编写操作手册<br>3.发送往来帐</span>
+    </div>
+    <div class="project6">
+      <input id="w-6" name="work-input" type="radio">
+      <label for="w-6">
+        <span><p>交通银行二代支付系统</p></span>
+      </label>
+    </div>
+    <div class="w-6-c">
+      <img src="images/bank.png" alt="adage">
+        <span class="w-6-c-e">CNAPS2提供了多点清算功能，新增大额清算排队业务撮合、资金池管理和日终自动拆解等功能，并采用ISO20022作为部分报文标准，独立出批量代收付、实时代收付、支票圈存签约协议管理等报文。</span>
+        <span class="w-6-c-e-1">1.UAT方面的测试，业务知识要求较多<br>2.编写操作手册<br>3.发送往来帐</span>
+    </div>
+  </div>
+</div>
+<div class="section-break"></div>
+<!-- 关于模块 -->
+<div class="aboutpart">
+  <div class="aboutpart-title">
+    <canvas id="about" class="ring" width="96px" height="96px">about</canvas> 
+  </div>
+  <div class="about">
+    <div class="a-c-l"><span>我今年25岁，2年全职测试工作，自学了很多知识，努力做一名合格的测试工程师</span></div>
+    <canvas class="a-c-l-b" width="800px" height="290px"></canvas>
+    <canvas class="a-c-t-b" width="800px" height="290px"></canvas>
+  </div>
+</div>
+<div class="section-break"></div>
+<!-- 联系模块 -->
+<div class="contactpart">
+<!--   <div class="contactpart-title">
+    <canvas id="contact" class="ring" width="96px" height="96px">contact</canvas> 
+  </div> -->
+  <!-- <img src="images/contactbg.gif" alt="contact"> -->
+  <div id="contact" class="contact">
+    <div class="c-1">
+      <span>感谢您的来访，您可以通过下面的方式联系我</span>
+    </div>
+    <div class="c-2">
+      <div class="c-2-c">
+        <div class="name"><p>您的姓名:</p><input type="text" id="name"></div>
+        <div class="mail"><p>您的邮箱:</p><input type="text" id="mail"></div>
+        <div class="talk"><p>想对我说的话:</p><textarea id="talk"></textarea></div>
+        <div class="send"><input type="button" value="轻点即可"></div>
+      </div>
+    </div>
+    <div class="c-3">
+      <ul class="c-3-u"><li>EMAIL</li><li>leevillion@gmail.com</li></ul>
+      <ul class="c-3-u"><li>Weibo</li><li><a href="http://weibo.com/lionlele/home?wvr=5">@天空上的狮子</a></li></ul>
+      <ul class="c-3-u"><li>QQ</li><li>723903049</li></ul>
+      <ul class="c-3-u"><li>Call</li><li>137-6103-3056</li></ul>
+    </div>
+  </div>
+</div>
+</body>
 </html>
