@@ -1,4 +1,4 @@
-
+﻿
 html,body{
 	background-color: #E6E6E6;
 	background-image: url(../images/bg.png);
@@ -54,7 +54,7 @@ a:visited{
 	position: fixed;
 /*	top: 0px;*/
 	bottom:5px;
-	left: 100px;
+	left: -300px;
 	z-index: 910;
 	width:30%;
 	height:50px;
