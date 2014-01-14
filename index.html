@@ -34,8 +34,6 @@
   var $winH = $(window).height();
   var $can = $(".about canvas");
   var $canH = parseInt($can.height()/2);
-  // var $srcDef = "http://img181.poco.cn/mypoco/myphoto/20110126/10/5637885820110126103051018.gif";
-  runing();
   $(window).scroll(function(){
    runing();
   })
@@ -44,7 +42,7 @@
     var $scroTop = $can.eq(i).offset();
     if($scroTop.top + $canH >= $(window).scrollTop() && $(window).scrollTop() + $winH >= $scroTop.top + $canH)
     {
-      $can.eq(i).animate({ marginLeft:"20%",opacity:'1'},1200);
+      $can.eq(i).animate({ marginLeft:"300px",opacity:'1'},1200);
     }
    })
   }
