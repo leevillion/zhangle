@@ -93,13 +93,15 @@ function drawRing(id,r){
 		context.arc(r/2, r/2, r/2, 0, Math.PI * 2, false);
 		context.closePath();
         // 外圈画完
-		
+
 		//内圆于外圆之间的部分
-		drawArc(context,r/2,r/2,r/2,0,Math.PI * 2 * 100 / 100,'#00c09e');
+		drawArc(context,r/2,r/2,r/2,0.0*Math.PI,Math.PI * 2 * 33 / 100,'#CC3333')
+		drawArc(context,r/2,r/2,r/2,0.66*Math.PI,Math.PI * 2 * 66 / 100,'#003366')
+		drawArc(context,r/2,r/2,r/2,1.32*Math.PI,Math.PI * 2 * 100 / 100,'#FFCC00')
 		// 画内部空白
 		drawArc(context,r/2,r/2,21,0,Math.PI * 2,'#E6E6E6');
 		// 画内圆
-		drawArc(context,r/2,r/2,38,0,Math.PI * 2,'#E6E6E6');
+		drawArc(context,r/2,r/2,30,0,Math.PI * 2,'#E6E6E6');
 
         //在中间写字
 	    context.font = "bold 15pt Arial";
@@ -134,13 +136,13 @@ function drawBigRing(id,r){
 		context.closePath();
         // 外圈画完
 
-
 		//内圆于外圆之间的部分
 		drawArc(context,r/2,r/2,r/2.5,0,Math.PI * 2 * 10 / 100,'#00c09e')
-		drawArc(context,r/2,r/2,r/2.5,0.2*Math.PI,Math.PI * 2 * 30 / 100,'#003366')
-		drawArc(context,r/2,r/2,r/2.5,0.6*Math.PI,Math.PI * 2 * 50 / 100,'#FFCC00')
-		drawArc(context,r/2,r/2,r/2.5,1*Math.PI,Math.PI * 2 * 90 / 100,'#333333')
-		drawArc(context,r/2,r/2,r/2.5,1.8*Math.PI,Math.PI * 2 * 100 / 100,'#CC3333')
+        drawArc(context,r/2,r/2,r/2.5,0.2*Math.PI,Math.PI * 2 * 30 / 100,'#003366')
+        drawArc(context,r/2,r/2,r/2.5,0.6*Math.PI,Math.PI * 2 * 50 / 100,'#FFCC00')
+        drawArc(context,r/2,r/2,r/2.5,1*Math.PI,Math.PI * 2 * 90 / 100,'#333333')
+        drawArc(context,r/2,r/2,r/2.5,1.8*Math.PI,Math.PI * 2 * 100 / 100,'#CC3333')
+
 
 		// 画内部空白
 		drawArc(context,r/2,r/2,105,0,Math.PI * 2,'#E6E6E6')

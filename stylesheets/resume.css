@@ -30,15 +30,103 @@ a:visited{
 	z-index:100; 
 	text-align: center;
 }
+.welcome:hover{
+	background-color: #00c09e;
+	transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out; /* Firefox 4 */
+	-webkit-transition: all 0.2s ease-in-out; /* Safari and Chrome */
+	-o-transition: all 0.2s ease-in-out; /* Opera */
+}
 .welcome span{
 	color:white;
-	font-size: 40px;
+	font-size: 52px;
+}
+.welcome span:hover{
+	color:#FF0033;
 }
 .blank{
 	height:30px;
 	width:100%;
 	float: left;
 }
+/*移动导航条*/
+#move-nav{
+	position: fixed;
+/*	top: 0px;*/
+	bottom:5px;
+	left: 100px;
+	z-index: 910;
+	width:30%;
+	height:50px;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out; /* Firefox 4 */
+	-webkit-transition: all 0.3s ease-in-out; /* Safari and Chrome */
+	-o-transition: all 0.3s ease-in-out; /* Opera */
+}
+#move-nav .logo{
+	background-image: url("../images/logo.png");
+	height: 40px;
+	width: 40px;
+	z-index: 920;
+	position: absolute;
+		/*圆形*/
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px; 
+}
+#move-nav .head{
+	/*width: 960px;*/
+	/*margin-left: 360px;*/
+	margin-top: 0;
+	height:100%;
+}
+#move-nav .main-nav{
+	display: none;
+	float: left;
+	font-family: futura;
+	width:80%;
+	height:100%;
+	margin-left: 12%;
+	margin-top: 0;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out; /* Firefox 4 */
+	-webkit-transition: all 0.3s ease-in-out; /* Safari and Chrome */
+	-o-transition: all 0.3s ease-in-out; /* Opera */
+}
+#move-nav .main-nav a{
+	display: block;
+	float: left;
+	height: 45px;
+	width: 50px;
+	padding: 3px 0px 0px 0px;
+	margin-right: 2%;
+	font-size: 3px;
+	color: #003399;
+/*	text-align: center;*/
+	border-bottom: 0px solid #5d5d5d;
+	background-color: #666666;
+/*	line-height: 40px;*/
+	/*圆形*/
+	-moz-border-radius: 25px; 
+	-webkit-border-radius: 25px; 
+	border-radius: 25px; 
+	/*动画效果*/
+	transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out; /* Firefox 4 */
+	-webkit-transition: all 0.2s ease-in-out; /* Safari and Chrome */
+	-o-transition: all 0.2s ease-in-out; /* Opera */
+}
+
+
+/*实现鼠标悬停效果*/
+#move-nav .main-nav a:hover{
+	font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
+	background-color: #00c09e;
+	color: white;
+
+	/*border-top: 5px solid #00c09e;*/
+}
+
 /*自我介绍*/
 .introduction{
 	height: 60%;
@@ -200,7 +288,13 @@ header{
 	float: left;
 	margin-left: 45%;
 }
-/*爱递吉*/
+.ring:hover{
+/*	-webkit-transform: rotate(300deg);*/
+/*	-moz-transform: rotate(300deg);*/
+/*	-o-transform: rotate(300deg);*/
+/*	-ms-transform: rotate(300deg);*/
+/*	transform: rotate(300deg);*/
+}
 .work1{
 	width:100%;
 	float:left;
@@ -278,7 +372,9 @@ header{
 	/*background-color: white;*/
 	padding-top: 1.5px;
 }
-
+.project6 label span{
+	width:160px;
+}
 .w-1-c{
 	width:100%;
 	height:400px;
@@ -339,17 +435,22 @@ header{
 	text-align: left;
 	font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
 }
-/*.w-4-c{
-	width:100%;
-	height:200px;
-	display: none;
-	position: relative;
-	background-color: white;
-	text-align: left;
-	font-family: "微软雅黑";
-}*/
-.w-2-c img,.w-3-c img,.w-4-c img,.w-5-c img,.w-6-c img{
+.w-6-c{
+	height:250px;
+}
+
+.w-2-c img,.w-3-c img,.w-4-c img,.w-5-c img{
 	margin-left: 18%;
+	float:left;
+}
+.w-6-c .w-6-c-i-1{
+	margin-left: 25%;
+	margin-top: 10px;
+	float:left;
+}
+.w-6-c .w-6-c-i-2{
+	margin-left: 15%;
+	margin-top: 10px;
 	float:left;
 }
 .w-2-c-e,.w-3-c-e,.w-4-c-e,.w-5-c-e,.w-6-c-e{
@@ -386,12 +487,18 @@ header{
 	font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
 }
 .a-c-l-b{
-	margin-left: 20%;
+	margin-left: -50%;
 	margin-top: 25px;
+	width:800px;
+	opacity:0;
+	display: block;
 }
 .a-c-t-b{
-	margin-left: 20%;
+	margin-left:-50%;
 	margin-top: 25px;
+	width:800px;
+	opacity:0;
+	display: block;
 }
 /*联系模块*/
 .contactpart{
@@ -413,8 +520,11 @@ font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
 	text-align: center;
 	font-size: 45px;
 	color: white;
+/*	margin-top: 5%;*/
+
 }
-.c-2{
+/*google from*/
+form{
 	text-align: left;
 	font-size: 25px;
 	color: white;
@@ -431,23 +541,26 @@ font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
 	height:15%;
 }
 .talk{
-	height:45%;
+	height:35%;
 }
 .send{
-	height:45%;
+	height:30%;
+}
+.name p,.mail p,.talk p{
+	margin-bottom: 0;
 }
 .name input{
-	height:35%;
+	height:40%;
 	width:90%;
 	font-size: 20px;
 }
 .mail input{
-	height:35%;
+	height:40%;
 	width:90%;
 	font-size: 20px;
 }
 .talk textarea{
-	height:45%;
+	height:80%;
 	width:90%;
 	font-size: 20px;
 }
@@ -459,10 +572,12 @@ font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
 	background-color: #A14D48;
 	color: white;
 	border: 0;
+	margin-top: 5%;
 }
 .send input:hover{
 	background-color: #495D63;
 }
+/*底部联系方式*/
 .c-3{
 	font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
 	width:100%;

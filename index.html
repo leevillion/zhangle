@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>醉梨</title>
+  <title>张乐</title>
   <meta http-equiv="Content-type" content="text/html" charset="utf-8">
   <link rel="stylesheet" type="text/css" href="stylesheets/resume.css">
+  <link rel="shortcut icon" href="favicon.ico" />
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="javascripts/main.js"></script>
   <script type="text/javascript" src="javascripts/animation.js"></script>
+  <script type="text/javascript" src="javascripts/google.js"></script>
+  <script type="text/javascript" src="javascripts/1.js"></script>
   <script type="text/javascript">
     window.onload=function()//window的onload事件，窗体加载完毕的时候执行
     {
@@ -15,17 +18,58 @@
       drawBar("canvas.a-c-l-b","VBS","Html","Js","C","PHP","Python","#666699","#00c09e")
       drawBar("canvas.a-c-t-b","QTP","Mysql","Jira","SVN","QC","Oracle","#6666CC","#FFCC33")
     };
+    $(document).scroll(function(){
+    if($(this).scrollTop() > 200)
+    {   
+        $('#move-nav').css({"left":"0px"});
+    }
+    else
+    {   
+        $('#move-nav').css({"left":"-300px"});
+    }
+});
 </script>
-</head>
+<script type="text/javascript">
+ $(function(){
+  var $winH = $(window).height();
+  var $can = $(".about canvas");
+  var $canH = parseInt($can.height()/2);
+  // var $srcDef = "http://img181.poco.cn/mypoco/myphoto/20110126/10/5637885820110126103051018.gif";
+  runing();
+  $(window).scroll(function(){
+   runing();
+  })
+  function runing(){
+   $can.each(function(i){
+    var $scroTop = $can.eq(i).offset();
+    if($scroTop.top + $canH >= $(window).scrollTop() && $(window).scrollTop() + $winH >= $scroTop.top + $canH)
+    {
+      $can.eq(i).animate({ marginLeft:"20%",opacity:'1'},1200);
+    }
+   })
+  }
+ })
+</script>
+</head><!-- onmouseout="mouseOut()" -->
 <body>
+  <div id="move-nav">
+    <div class="logo" onclick="exchangeNav()"></div>
+    <div class="head">
+      <nav class="main-nav" id="main-nav" style="display:none;">
+        <a class="main-nav-work" href="#work" title="work" onclick="scroller('work', 500)">我的工作</a>
+        <a class="main-nav-about" href="#about" title="about"  onclick="scroller('about', 500)">我的信息</a>
+        <a class="main-nav-contact" href="#contact" title="contact"  onclick="scroller('contact', 500)">与我联系</a>
+      </nav>
+  </div>
+  </div>
   <!-- 欢迎栏-->
-  <div class="welcome"><span>So you have come here</span></div>
+  <div class="welcome" id="welcome"><span>So you have come here</span></div>
   <!-- 卷首语 -->
 <span class="line"></span>
 <div class="introduction">
   <p>
-    something
-    <br><span>@somethingsome</span>
+    Hi，我是张乐
+    <br><span>@一名自动化测试工程师</span>
   </p>
   <h2>
     我喜爱惊险，刺激的测试运动，您可以<a href="#work" onclick="scroller('work', 500)">看看我近期的工作</a><br>您还可以访问<a href="http://zlshuo.com" target="view_window">我的博客</a></h2>
@@ -43,7 +87,7 @@
 <div class="section-break"></div>
 <!-- 工作模块 -->
 <div class="contentpart">   
-  <div class="workpart-title"><canvas id="work" class="ring" width="96px" height="96px">work</canvas></div>
+  <div class="workpart-title"><canvas id="work" class="ring" width="96px" height="96px" onmouseover="setRotate0()" onmouseout="clearRotate0()">work</canvas></div>
   <div class="work1">
     <div class="project1">
       <input id="w-1" name="work-input" type="radio">
@@ -68,7 +112,7 @@
       </label>
     </div>
     <div class="w-2-c">
-      <img src="images/adage.png" alt="adage">
+      <img src="images/adage.png" alt="爱递吉">
         <span class="w-2-c-e">上海爱递吉物流平台，整合物流信息和需求，物流资源优化配置，提高物流操作和管理水平，降低物流成本。主要包括运单管理、订单管理、运输线路优化、市场交易等模块。</span>
         <span class="w-2-c-e-1">作为测试工程师，我的任务是保证平台的正常运行，创造完善、流畅的用户体验，解决突发问题并提出改进意见。</span>
     </div>
@@ -79,7 +123,7 @@
       </label>
     </div>
     <div class="w-3-c">
-      <img src="images/alibaba.png" alt="adage">
+      <img src="images/alibaba.png" alt="阿里巴巴">
         <span class="w-3-c-e">解决跨BU实时数据统计效率低下，图表统计耗费大量人力，审批流程未线上运行的问题，提高财务风险管控和BU间融资利率等信息的透明度以满足审计追溯等要求。财资管理系统主要分为现金管理、银行账户管理和投资管理三大模块。</span>
         <span class="w-3-c-e-1">1.设计测试用例520条<br>2.编写自动化脚本(qtp)<br>3.执行测试用例，提交BUG总数约400个<br>4.打包发布</span>
     </div>
@@ -90,31 +134,31 @@
       </label>
     </div>
     <div class="w-4-c">
-      <img src="images/bank.png" alt="adage">
+      <img src="images/bank.png" alt="交通银行">
         <span class="w-4-c-e">CNAPS2提供了多点清算功能，新增大额清算排队业务撮合、资金池管理和日终自动拆解等功能，并采用ISO20022作为部分报文标准，独立出批量代收付、实时代收付、支票圈存签约协议管理等报文。</span>
         <span class="w-4-c-e-1">1.UAT方面的测试，业务知识要求较多<br>2.编写操作手册<br>3.发送往来帐</span>
     </div>
     <div class="project5">
       <input id="w-5" name="work-input" type="radio">
       <label for="w-5">
-        <span><p>交通银行二代支付系统</p></span>
+        <span><p>淘宝非Oracle支付二期</p></span>
       </label>
     </div>
     <div class="w-5-c">
-      <img src="images/bank.png" alt="adage">
-        <span class="w-5-c-e">CNAPS2提供了多点清算功能，新增大额清算排队业务撮合、资金池管理和日终自动拆解等功能，并采用ISO20022作为部分报文标准，独立出批量代收付、实时代收付、支票圈存签约协议管理等报文。</span>
-        <span class="w-5-c-e-1">1.UAT方面的测试，业务知识要求较多<br>2.编写操作手册<br>3.发送往来帐</span>
+      <img src="images/taobao.png" alt="淘宝">
+        <span class="w-5-c-e">淘宝非Oracle支付系统实现淘宝采购部门对供应商的付款功能。一期项目只能通过银行付款，二期在一期的基础之上添加了支付宝支付功能，并加入专票、GL验证、出纳验证等功能。</span>
+        <span class="w-5-c-e-1">1.编写测试计划、方案，设计测试用例200条<br>2.新老数据兼容性测试<br>3.编写操作手册</span>
     </div>
     <div class="project6">
       <input id="w-6" name="work-input" type="radio">
       <label for="w-6">
-        <span><p>交通银行二代支付系统</p></span>
+        <span><p>我工作的城市</p></span>
       </label>
     </div>
     <div class="w-6-c">
-      <img src="images/bank.png" alt="adage">
-        <span class="w-6-c-e">CNAPS2提供了多点清算功能，新增大额清算排队业务撮合、资金池管理和日终自动拆解等功能，并采用ISO20022作为部分报文标准，独立出批量代收付、实时代收付、支票圈存签约协议管理等报文。</span>
-        <span class="w-6-c-e-1">1.UAT方面的测试，业务知识要求较多<br>2.编写操作手册<br>3.发送往来帐</span>
+      <img class="w-6-c-i-1" src="images/hangzhou.png" alt="杭州">
+      <img class="w-6-c-i-2" src="images/shanghai.png" alt="上海">
+      <span class="w-6-c-e-1">曾经出差去杭州工作了大半年时间，目前打算长期在上海工作</span>
     </div>
   </div>
 </div>
@@ -122,7 +166,7 @@
 <!-- 关于模块 -->
 <div class="aboutpart">
   <div class="aboutpart-title">
-    <canvas id="about" class="ring" width="96px" height="96px">about</canvas> 
+    <canvas id="about" class="ring" width="96px" height="96px" onmouseover="setRotate()" onmouseout="clearRotate()">about</canvas> 
   </div>
   <div class="about">
     <div class="a-c-l"><span>我今年25岁，2年全职测试工作，自学了很多知识，努力做一名合格的测试工程师</span></div>
@@ -133,22 +177,20 @@
 <div class="section-break"></div>
 <!-- 联系模块 -->
 <div class="contactpart">
-<!--   <div class="contactpart-title">
-    <canvas id="contact" class="ring" width="96px" height="96px">contact</canvas> 
-  </div> -->
-  <!-- <img src="images/contactbg.gif" alt="contact"> -->
   <div id="contact" class="contact">
     <div class="c-1">
       <span>感谢您的来访，您可以通过下面的方式联系我</span>
     </div>
-    <div class="c-2">
+    <iframe name="hidden-ifram" id="hidden-ifram" style="display:none;" onload="if(submiter)
+    {window.location='thanks.html';}"></iframe>
+    <form action="https://docs.google.com/forms/d/1f2OKvnB8seCnkRzzHye4OEuEkNFp6zs9nyPakkmyBjw/formResponse" method="POST" id="ss-form" target="hidden-ifram" onsubmit="submiter=sendInfo();">
       <div class="c-2-c">
-        <div class="name"><p>您的姓名:</p><input type="text" id="name"></div>
-        <div class="mail"><p>您的邮箱:</p><input type="text" id="mail"></div>
-        <div class="talk"><p>想对我说的话:</p><textarea id="talk"></textarea></div>
-        <div class="send"><input type="button" value="轻点即可"></div>
+        <div class="name"><p>您的姓名:</p><input name="entry.49405515" type="text" id="name" placeholder="名字"></div>
+        <div class="mail"><p>您的邮箱:</p><input name="entry.959277212" type="text" id="mail" placeholder="example@mail.com"></div>
+        <div class="talk"><p>想对我说的话:</p><textarea name="entry.924918004" id="talk" placeholder="随便写点什么都可以"></textarea></div>
+        <div class="send"><input type="submit" name="submit" value="轻点即可" id="ss-submit"></div>
       </div>
-    </div>
+  </form>
     <div class="c-3">
       <ul class="c-3-u"><li>EMAIL</li><li>leevillion@gmail.com</li></ul>
       <ul class="c-3-u"><li>Weibo</li><li><a href="http://weibo.com/lionlele/home?wvr=5">@天空上的狮子</a></li></ul>
