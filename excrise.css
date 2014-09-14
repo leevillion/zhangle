@@ -1,10 +1,11 @@
-body{
+html,body{
 	margin:0;
 	padding:0;
+	height:100%;
 }
 nav{
 	width:100%;
-	height:60px;
+	height:8%;
 	background-color: #495D63;
 	text-align: center;
 }
@@ -67,7 +68,7 @@ span:hover{
 }
 .main{
 	width:100%;
-	height:700px;
+	height:92%;
 	background-color: black;
 	float: left;
 }
@@ -100,8 +101,9 @@ form{
 	font-size: 25px;
 	color: white;
 	width:100%;
-	height:400px;
+	height:80%;
 	font-family: "微软雅黑",Arial, "Hiragino Sans GB", sans-serif, "simsun";
+	display: inline-block;
 }
 .c-2-c{
 	width:40%;
@@ -115,7 +117,8 @@ form{
 	height:20%;
 }
 .send{
-	height:30%;
+	height:20%;
+	margin-top: 10%;
 }
 .name p,.mail p,.talk p{
 	margin-bottom: 0;
@@ -143,7 +146,7 @@ form{
 	background-color: #A14D48;
 	color: white;
 	border: 0;
-	margin-top: 15%;
+	/*margin-top: 15%;*/
 }
 .send input:hover{
 	background-color: #495D63;
@@ -154,7 +157,8 @@ form{
 	width:100%;
 	height: 20%;
 	background-color: #495D63;
-	margin-top: 75px;
+/*	margin-top: 75px;*/
+	margin-bottom: 0;
 }
 .c-3-u{
 	list-style: none;
