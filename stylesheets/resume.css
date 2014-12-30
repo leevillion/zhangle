@@ -502,6 +502,7 @@ header{
 .a-c-t-b{
 	/*margin-left:-50%;*/
 	margin-top: 25px;
+	margin: auto;
 	width:800px;
 	opacity:0;
 	display: block;
